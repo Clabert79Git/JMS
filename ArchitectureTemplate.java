@@ -8,21 +8,17 @@ public class ArchitectureTemplate {
        List<List<String>> tiers;
         tiers = new ArrayList<>();
         
-            // full file name
-        String[] parts = architecture_template.split("\\_"); // String array, each element is text between dots
-        //String beforeFirstDot = parts[0]; 
+        String[] parts = architecture_template.split("\\_");
         for (String part : parts) {
             
             List<String> single_tier;
             single_tier = new ArrayList<>();
             
             String number_str = "" + part.charAt(0) + part.charAt(1);
-            //int num = Integer.parseInt(number_str);
             
             
             single_tier.add(part.substring(2));
             single_tier.add(number_str);
-           // System.out.print(part.substring(2));
             tiers.add(single_tier);
         }
         return tiers;
@@ -33,19 +29,27 @@ public class ArchitectureTemplate {
    
     public static void main(String[] args) {
         
-        List<List<String>> tiers1;
-        tiers1 = new ArrayList<>();
-        tiers1 = getTiersFromArchitectureTemplate("02IIS_02WLS_01ORA");
+        List<List<String>> nestlevel1;
+        nestlevel1 = new ArrayList<>();
+        nestlevel1 = getTiersFromArchitectureTemplate("01IIS_02WLS_03ORA");
 		
-        List<String> tiers2;
-        tiers2 = new ArrayList<>();
+        List<String> nestlevel2;
+        nestlevel2 = new ArrayList<>();
 		
-		for(int i=0; i <  tiers1.size(); i++) {	
+		for(int i=0; i <  nestlevel1.size(); i++) {	
 			
-			tiers2 = tiers1.get(i);
-			for(int ii = 0; ii <  tiers2.size(); ii++) {	
-				System.out.println(tiers2.get(ii).toString() + "----" + ii );
+			nestlevel2 = nestlevel1.get(i);
+			for(int ii = 0; ii <  nestlevel2.size(); ii++) {	
+				System.out.println(nestlevel2.get(ii).toString() + "**" + i + "--"+ii);
 			}
+			/*
+				IIS**0--0
+				01**0--1
+				WLS**1--0
+				02**1--1
+				ORA**2--0
+				03**2--1
+				*/
 			
 		}
 	
