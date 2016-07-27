@@ -34,16 +34,24 @@ public class TestCollection{
 			System.out.println(element);
 		}
 		
+		
+		for(Object o: listA){
+		    if(((String)o).equalsIgnoreCase("ELEMENT 1")){
+		        
+		    }
+		}
+		
+		// remove object
+		listA.remove("element 2");
+		
+		// Riorder
+		// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+		
 		//Access by new for-loop
 		for(Object object:listA){
 			String element = (String) object;
 			System.out.println(element);
 		}
 		
-		/*for(Object a: listA){
-		    if(a.get().equalsIgnoreCase("ELEMENT 1")){
-		        listA.remove(a);
-		    }
-		}*/
 	}
 }
