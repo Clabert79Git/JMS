@@ -6,3 +6,5 @@ git clone https://github.com/Clabert79Git/JMS.git
 git add -A (https://git-scm.com/docs/git-add)
 
 git push origin master
+
+git config --list(mi fornisce l’elenco delle configurazioni)
