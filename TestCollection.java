@@ -25,13 +25,13 @@ public class TestCollection{
 		String element1 = (String)listA.get(1);
 		String element3 = listA.get(3).toString();
 		
-		System.out.println(element3 + "--" + element1 + "--" + element0);
+		//System.out.println(element3 + "--" + element1 + "--" + element0);
 		
 		// Acces by iterator
 		Iterator iterator = listA.iterator();
 		while(iterator.hasNext()){
 			String element = (String) iterator.next();
-			System.out.println(element);
+			// System.out.println(element);
 		}
 		
 		
@@ -50,8 +50,37 @@ public class TestCollection{
 		//Access by new for-loop
 		for(Object object:listA){
 			String element = (String) object;
-			System.out.println(element);
+			// System.out.println(element);
 		}
 		
+		Map parametersValues = new HashMap<String, String>();
+		parametersValues.put("Size","16 giga");
+		parametersValues.put("Everorment","development");
+	    HashMap<String, String> hmap = new HashMap<String, String>();
+		/*Adding elements to HashMap*/
+		hmap.put("Size", "16 giga");
+		hmap.put("Everorment", "development");
+		hmap.put("Scope", "IIS");
+		
+	    //Display content using Iterator
+	    Set set = hmap.entrySet();
+	    Iterator iteratorParameters = set.iterator();
+	    while(iteratorParameters.hasNext()) {
+	    	Map.Entry mentry = (Map.Entry)iteratorParameters.next();
+	        System.out.print("key is: "+ mentry.getKey() + " & Value is: " + mentry.getValue() + "   ");
+	    }
+		
+		String var= hmap.get("Everorment");
+		System.out.println("Value at index 2 is: "+var);
+		
+			
+		/*
+		// Using EntrySet
+		for(Map.Entry<String, String> parametersEntry : parametersValues.entrySet()){
+		           // System.out.println(parameterEntry.getKey() +" :: "+ parameterEntry.getValue());
+				}
+		*/
+			
+				
 	}
 }
