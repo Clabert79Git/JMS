@@ -4,11 +4,11 @@ import java.lang.*;
 
 public class EstractIpAdress{
 	public static void main(String[] args) {
-	String result = "";
-	String ipString = " OutputEC2as01 10.151.179.65 as01 OutputEC2as02 10.151.186.70 as02 ";
+		String result = "";
+		String ipString = " OutputEC2as01 10.151.179.65 as01 OutputEC2as02 10.151.186.70 as02 ";
 	
-	String IPADDRESS_PATTERN = 
-        "(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
+		String IPADDRESS_PATTERN = 
+        	"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
 
 		Pattern pattern = Pattern.compile(IPADDRESS_PATTERN);
 			
@@ -24,13 +24,13 @@ public class EstractIpAdress{
 			
 			matcher = pattern.matcher(tmpStr);
 			
-	        if (matcher.find()) {
+	        	if (matcher.find()) {
 				if ("".equals(result))
-	            	result = result + matcher.group(0);
+	            			result = result + matcher.group(0);
 				else
 					result = result + "," + matcher.group(0);
-	        }
-	   } 
-	   System.out.print(result);
+	        	}
+	   	} 
+	   	System.out.print(result);
 	}
 }
